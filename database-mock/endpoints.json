@@ -1,8 +1,0 @@
-{
-    "alunos": {
-        "GET": {
-            "class": "AlunoController",
-            "method": "listar"
-        }
-    }
-}
