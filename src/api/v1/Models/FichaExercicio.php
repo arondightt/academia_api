@@ -1,9 +1,9 @@
 <?php
 namespace V1\Models;
 
-class Matricula extends \Crud
+class FichaExercicio extends \Crud
 {
-    protected static $table = "matricula";
+    protected static $table = "ficha_exercicio";
 
     public static function buscar($data)
     {

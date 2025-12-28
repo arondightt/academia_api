@@ -1,5 +1,4 @@
 <?php
-namespace App\Config;
 
 use PDO;
 use PDOException;
@@ -14,9 +13,6 @@ class Connection
     private static string $user = 'root';
     private static string $pass = '';
     private static string $charset = 'utf8mb4';
-
-    private function __construct() {}
-    private function __clone() {}
 
     private static function setEnvConnection(): void
     {
@@ -47,11 +43,9 @@ class Connection
                 ]);
 
             } catch (PDOException $e) {
-                http_response_code(500);
-                echo json_encode([
-                    'error' => 'Erro ao conectar no banco de dados',
-                    'message' => $e->getMessage()
-                ]);
+                $message = ["error" => ["Erro ao conectar no banco de dados"]];
+                // $message[] = $e->getMessage();
+                Response::send(500,$message);
                 exit;
             }
         }
